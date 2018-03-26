@@ -21,7 +21,9 @@
         "topthink/think-captcha": "^1.0",
         "topthink/think-image": "^1.0",
         "topthink/think-helper": "^1.0",
-        "ezyang/htmlpurifier": "^4.9"
+        "ezyang/htmlpurifier": "^4.9",
+        "qiniu/php-sdk": "^7.2",
+        "riverslei/payment": "~4.0.0"
     },
     "extra": {
         "think-path": "thinkphp"

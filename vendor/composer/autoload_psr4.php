@@ -10,4 +10,6 @@ return array(
     'think\\composer\\' => array($vendorDir . '/topthink/think-installer/src'),
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\' => array($vendorDir . '/topthink/think-image/src', $baseDir . '/thinkphp/library/think'),
+    'Qiniu\\' => array($vendorDir . '/qiniu/php-sdk/src/Qiniu'),
+    'Payment\\' => array($vendorDir . '/riverslei/payment/src'),
 );

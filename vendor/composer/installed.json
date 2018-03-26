@@ -261,5 +261,112 @@
         "keywords": [
             "html"
         ]
+    },
+    {
+        "name": "qiniu/php-sdk",
+        "version": "v7.2.3",
+        "version_normalized": "7.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/qiniu/php-sdk.git",
+            "reference": "67852ba9cdd7f48e0e080961abebafee134fb329"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/qiniu/php-sdk/67852ba9cdd7f48e0e080961abebafee134fb329.zip",
+            "reference": "67852ba9cdd7f48e0e080961abebafee134fb329",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2018-02-20T13:59:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Qiniu\\": "src/Qiniu"
+            },
+            "files": [
+                "src/Qiniu/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Qiniu",
+                "email": "sdk@qiniu.com",
+                "homepage": "http://www.qiniu.com"
+            }
+        ],
+        "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+        "homepage": "http://developer.qiniu.com/",
+        "keywords": [
+            "cloud",
+            "qiniu",
+            "sdk",
+            "storage"
+        ]
+    },
+    {
+        "name": "riverslei/payment",
+        "version": "v4.0.1",
+        "version_normalized": "4.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/helei112g/payment.git",
+            "reference": "e8b0fdd2566d75c82686737fd14856c1e3006b75"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/helei112g/payment/e8b0fdd2566d75c82686737fd14856c1e3006b75.zip",
+            "reference": "e8b0fdd2566d75c82686737fd14856c1e3006b75",
+            "shasum": ""
+        },
+        "require": {
+            "ext-bcmath": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "endroid/qrcode": "~1.9"
+        },
+        "time": "2017-07-05T15:13:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Payment\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "helei",
+                "email": "dayugog@gmail.com",
+                "homepage": "https://helei112g.github.io/categories/payment-3/"
+            }
+        ],
+        "description": "支付宝支付、微信支付、招商一网通支付php SDK。方便快速接入，最完整的开源支付 php sdk",
+        "homepage": "https://helei112g.github.io/categories/payment-3/",
+        "keywords": [
+            "alipay",
+            "weixin",
+            "一网通",
+            "微信支付",
+            "招商一网通",
+            "支付宝支付",
+            "集成支付接口SDK"
+        ]
     }
 ]
