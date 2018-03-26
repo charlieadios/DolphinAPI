@@ -30,17 +30,20 @@ class APIController
 
     /**
      * @param $paramKeys
+     * @param bool $isNull 是否不能为空
      * @return mixed
      * 参数校验
      */
-    protected function rule($paramKeys){
+    protected function checkParam($paramKeys , $isNull = false){
         $paramKeysArr   =   explode(',',trim($paramKeys));
         foreach ($paramKeysArr as $item) {
              if(!array_key_exists(trim($item),$this->params)){
                     abort(400,$item.':参数缺失');
              }
-             if($this->params[$item] == '' || $this->params[$item]  == null){
-                    abort(400,$item.':不能为空');
+             if($isNull){
+                 if($this->params[$item] == '' || $this->params[$item]  == null){
+                     abort(400,$item.':不能为空');
+                 }
              }
         }
         return $this->params;

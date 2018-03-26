@@ -13,15 +13,20 @@ class User extends Model
 {
 
     /**
-     * @param $phone
+     * @param $tel
      * @return bool
-     * 手机号是否存在
      */
-    public function isPhoneExist($phone){
-        $bool = false;
-        $count = self::where('phone',$phone)->count();
+    public function isPhoneExist($tel){
+        $bool  = false;
+        $count = self::where('phone',$tel)->count();
         $count > 0 && $bool = true;
         return $bool;
+    }
+
+    //注册
+    public function register($param){
+        $tel   = $param['tel'];
+
     }
 
 
