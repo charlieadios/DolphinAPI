@@ -56,7 +56,7 @@ class APIController
      * @return \think\response\Json
      * 成功返回
      */
-    public function success($msg , $data = null){
+    public function success($msg = 'success', $data = null){
         return json(['code'=>200,'msg'=>$msg,'data'=>$data]);
     }
 
