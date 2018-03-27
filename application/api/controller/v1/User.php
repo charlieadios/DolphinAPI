@@ -48,13 +48,14 @@ class User extends APIController
      */
     public function register(UserModel $user)
     {
-        $param = $this->checkParam('phone');
-        $tel = $param['tel'];
+        $param        = $this->checkParam('tel');
+        $tel          = $param['tel'];
         $inputSmsCode = $param['smsCode'];
         if ($user->isPhoneExist($tel)) abort(400, '手机号已注册');
 
         //验证码判断
-        $cacheCode = Redis::getInstance()->get('smsCode:' . $tel);
+
+        $cacheCode = Redis::getInstance()->getConnect()->get('smsCode:' . $tel);
         if (!$cacheCode) abort(400, '验证码已失效');
         if ($cacheCode == $inputSmsCode) {
             //执行注册业务代码
@@ -64,6 +65,11 @@ class User extends APIController
     }
 
 
+    /**
+     * @param UserModel $user
+     * @return \think\response\Json
+     * 忘记密码
+     */
     public function forgotPwd(UserModel $user)
     {
         $param        = $this->checkParam('tel,smsCode,newPwd');
@@ -71,7 +77,7 @@ class User extends APIController
         $inputSmsCode = $param['smsCode'];
         $newPwd       = $param['newPwd'];
 
-        $cacheCode = Redis::getInstance()->get('smsCode:' . $tel);
+        $cacheCode = Redis::getInstance()->getConnect()->get('smsCode:' . $tel);
         if (!$cacheCode) abort(400, '验证码已失效');
         if ($cacheCode != $inputSmsCode ) abort(400, '短信验证码错误');
 
@@ -118,7 +124,7 @@ class User extends APIController
         }
 
         $code = randNumStr(4);
-        Redis::getInstance()->setex('smsCode:' . $tel, 300, $code);
+        Redis::getInstance()->getConnect()->setex('smsCode:' . $tel, 300, $code);
         (new SmsService())->sendTemplateSMS($tel, [$code, 5], 193061);
         return json(['code' => 200, 'msg' => '短信验证码已发送至:' . $tel]);
 

@@ -15,8 +15,9 @@ class Redis
     private $con;
 
     public static function getInstance(){
+
         if(!isset(self::$instance)){
-            self::$instance = new \Redis();
+            self::$instance = new Redis();
         }
         return self::$instance;
     }
@@ -24,6 +25,7 @@ class Redis
     public function __construct()
     {
         $conf =  config('redis');
+
         $this->con = new \Redis();
         $this->con->connect($conf['host'],$conf['port']);
         $this->con->auth($conf['auth']);
